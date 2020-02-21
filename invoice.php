@@ -185,6 +185,9 @@ echo $item_id;
 </tr>
 </thead>
 
+
+<tbody>
+
   <?php
  $servername = "localhost";
  $username = "root";
@@ -211,9 +214,6 @@ echo $item_id;
  // output data of each row
  while($row = mysqli_fetch_assoc($result)) { ?>
 
-<table class="table table-striped">
-
-<tbody>
 
 <tr>
 <td class="center"><?php echo $i++ ?></td>
@@ -222,13 +222,14 @@ echo $item_id;
 <td class="right" id="quantity"><?php echo $row['quantity']; ?></td>
 <td class="right" id="total"> <?php echo $row['quantity']*$row['unit_price']?></td>
 </tr>
-</tbody>
-</table>
 <?php
   $grand_total = $grand_total + ($row['quantity']*$row['unit_price']);
  $count++;
    }
 ?>
+
+</tbody>
+</table>
 </div>
 <div class="row">
 <div class="col-lg-4 col-sm-5">

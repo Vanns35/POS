@@ -35,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 
     if (is_array($quantity)) {
 	  for ($i=0;$i<count($quantity);$i++) {
-	   $sql = "INSERT INTO service (order_name, quantity, unit_price, cust_id) VALUES ('$service_name[0]', '$quantity[0]', '$price[0]','$cust_id')";
+	   $sql = "INSERT INTO service (order_name, quantity, unit_price, cust_id) VALUES ('$service_name[$i]', '$quantity[$i]', '$price[$i]','$cust_id')";
 	   $conn->query($sql);
 	  }
     header("Location: http://localhost/NailIt/invoice.php?cust_id=".$cust_id); 
