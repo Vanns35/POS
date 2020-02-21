@@ -80,6 +80,9 @@
 
 
           <form method="post" action="service.php">
+
+           <?php include('errors.php'); ?>
+           
             <div class="row">
                <div class="col-12">
                   <h1>New Entry</h1>
